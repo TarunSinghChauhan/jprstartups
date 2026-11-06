@@ -2,10 +2,9 @@
 
 An interactive 3D map of Jaipur's startup ecosystem. Spin the globe, fly into Jaipur, and explore startups on a real street network, with moving traffic and pedestrians. No sign-up, no backend, no build step.
 
-<!-- Add a screenshot named screenshot.png next to this file, then uncomment the next line -->
-<!-- ![Jaipur Startup Arena](screenshot.png) -->
+**Live demo:** https://jprstartups.vercel.app/
 
-**Live demo:** https://tarunsinghchauhan.github.io/jprstartups/
+> Best viewed on a desktop or a recent phone. Drag to rotate, scroll or pinch to zoom, and click a marker for the company website.
 
 ## Features
 
@@ -29,12 +28,18 @@ python3 -m http.server 8000
 
 The page loads three.js (r128) from the cdnjs CDN, so it needs an internet connection.
 
-## Deploy with GitHub Pages
+## Deploy
+
+The live site runs on **Vercel**: https://jprstartups.vercel.app/
+
+**Vercel (recommended):**
 
 1. Push this repository to GitHub.
-2. Open **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-4. After a minute your site is live at `https://tarunsinghchauhan.github.io/jprstartups/`.
+2. On [vercel.com](https://vercel.com), click **Add New → Project** and import the repository.
+3. Leave the framework preset as **Other**, keep the defaults (no build command, no output directory), and click **Deploy**.
+4. Every later `git push` to `main` redeploys automatically.
+
+**GitHub Pages (alternative):** go to **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
 
 ## Add or edit startups
 
@@ -73,6 +78,14 @@ Markers are nudged slightly apart so they do not overlap, and are kept inside th
 - Vehicles and pedestrians are a simulation on real roads, not live data, and are drawn larger than life so they are visible.
 - There are no buildings in the street view.
 - The page is large (about 11 MB) because the map data is embedded.
+
+## Repository structure
+
+```
+.
+├── index.html   # the whole app (HTML + JS + embedded data)
+└── README.md
+```
 
 ## Data sources and credits
 
